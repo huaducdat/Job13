@@ -17,7 +17,21 @@ function addFunc() {
         const nameCell = newRow.insertCell(0);
         const actionCell = newRow.insertCell(1);
         const numberCell = newRow.insertCell(2);
-        const cataCell = newRow.insertCell(3)
+        const cataCell = newRow.insertCell(3);
+        const pricedCell = newRow.insertCell(4);
+        const amountCell = newRow.insertCell(5);
+        const inputPrice = document.createElement('input');
+        inputPrice.type = "number";
+        inputPrice.placeholder = 'Enter priced...';
+        inputPrice.min = 0;
+        inputPrice.step = 1;
+        pricedCell.appendChild(inputPrice);
+        const inputAmount = document.createElement('input');
+        inputAmount.type = "number";
+        inputAmount.placeholder = 'Enter amount...';
+        inputAmount.min = 0;
+        inputAmount.step = 1;
+        amountCell.appendChild(inputAmount);
         const removeButt = document.createElement('button');
         removeButt.textContent = 'Remove';
         const editButt = document.createElement('button');
@@ -28,7 +42,7 @@ function addFunc() {
         if (cataLst.length > 0 && cataLst) {
             for (let i = 0; i < cataLst.length; i++) {
                 const option = document.createElement('option');
-                option.value = i;
+                option.value = cataLst[i];
                 option.textContent = cataLst[i];
                 selection.appendChild(option);
             }
@@ -67,9 +81,16 @@ addFunc();
 let nameLst = [];
 function saveFunc() {
     // localStorage.clear();
+    nameLst = [];
     const rows = tbody.getElementsByTagName('tr');
     for (let i = 0; i < rows.length; i++) {
-        nameLst.push(rows[0].getElementsByTagName('td')[0]);
+        newItem = {
+            name: rows[i].cells[0].textContent,
+            priced: rows[i].cells[4].querySelector('input')?.value || "0",
+            amount: rows[i].cells[5].querySelector('input')?.value || "0",
+            cata: rows[i].cells[3].querySelector('select')?.value || ""
+        };
+        nameLst.push(newItem);
     }
     localStorage.setItem('data', JSON.stringify(nameLst));
     const json = localStorage.getItem('data');
