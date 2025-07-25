@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sanh san pham</title>
+    <link rel="stylesheet" href="./index1-style.css">
+</head>
+
+<body>
+    <button id="goto-page2">Go to set catalogue</button>
+    <form id="add-product-form">
+        <div>
+            <label for="name-product-in">Name:</label>
+            <input type="text" id="name-product-in" maxlength="255">
+        </div>
+        <button type="submit" id="add-butt">Add</button>
+    </form>
+    <table id="product-lst">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+                <th>ID</th>
+                <th>Catalogue</th>
+            </tr>
+        </thead>
+
+        <tbody id="my-tbody">
+
+        </tbody>
+    </table>
+    <button id="save-btn">Save</button>
+
+    <script src="./handle.js"></script>
+</body>
+
+</html>

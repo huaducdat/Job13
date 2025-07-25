@@ -1,0 +1,31 @@
+html{
+    font-size: 15px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+#form-catalogue{
+    display: flex;
+    margin-top: 30px;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+#cata-table{
+    border-collapse: collapse;
+}
+td,th{
+    border: 1px solid black;
+    padding: 3px 9px;
+    transition: all .3s;
+}
+th{
+    background-color: gray;
+}
+td:hover{
+    background-color: rgb(41, 187, 255);
+}

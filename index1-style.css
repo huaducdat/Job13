@@ -1,0 +1,49 @@
+html{
+    font-size: 15px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+#add-product-form{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+#add-butt{
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: rgb(19, 121, 255);
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+#name-product-in{
+    font-size: 1.2rem;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 6px;
+    padding: 3px 6px;
+}
+#product-lst{
+    border-collapse: collapse;
+}
+th,td{
+    padding: 3px 6px;
+    border: 1px solid black;
+    transition: all .3s;
+}
+th{
+    background-color: gray;
+}
+td:hover{
+    background-color: rgb(34, 240, 255);
+}
+label{
+    font-weight: bold;
+}
